@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Economica&display=swap');
+body {
+    margin: 10px 80px;
+    font-family: Banschrift condensed, Arial, Helvetica, sans-serif;
+    background-color: #D9D9D9;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap; /*permet à l'element de s'empiler qd écran reduit*/
+    justify-content: space-between; /*permet d'espacer les éléments*/
+
+}
+
+nav h1 {
+    font-family: 'Beau Rivage', cursive;
+    font-size: 35px;
+    text-shadow: 1px 2px 1px #f9d291;
+}
+
+nav img.haut-gauche {
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 75px;
+    /*height: 100px;*/
+    max-width: 100%;
+    margin: 0px;
+    padding: 0px;
+    position:relative;
+}
+nav .onglets {
+    margin-top: 35px; /*aligne la nav avec le titre*/
+}
+
+nav .onglets a {
+    text-decoration: none; /*enleve le soulignement*/
+    color: #7f7e7e;
+    margin-right: 15px; /*ecarte les items*/
+    position: relative;
+}
+
+nav .onglets a:after {
+    content: '';
+    height: 2px;
+    background-color:#7f7e7e;
+    width: 0px;
+    position: absolute;
+    bottom: -5px;
+    transition: 0.2s all ease-in-out;
+    right: 0;
+}
+
+nav .onglets a:hover {
+    color: #ffcc4d;
+    text-shadow: 1px 1px 1px #2d2d2d;
+}
+
+nav .onglets a:hover:after {
+    left: 0;
+    width: 100%;
+    
+}
+
+hr {
+    width: 400px;
+    color: #ffcc4d;
+}
+
+.articles {
+    margin-top: 30px; /*cree un espace au dessus */
+}
+
+.articles .article{
+    display: flex; /*permet d'aligner l image au texte*/
+    flex-wrap: wrap; /*permet d'empiler les elements quand l ecran est trop petit*/
+    margin-bottom: 30px; /*permet d espacer chaque article*/
+}
+
+.articles .article .left img {
+    height: 300px;
+    width: 500px;
+    border: 1px solid #ffcc4d;
+    box-shadow: 5px 5px 5px #ffcc4d;
+}
+iframe {
+    height: 300px;
+    width: 500px;
+    border: 1px solid #ffcc4d;
+    box-shadow: 5px 5px 5px #ffcc4d;
+}
+.articles .article .right {
+    max-width: 50%; /*permet de placer le texte à droite de l image*/
+    margin-left: 40px; /*permet d espacer le texte de l image*/
+    font-family: 'Economica', sans-serif;
+    font-size: 18px;
+}
+
+.articles .article .right p.date{
+    color: #7f7e7e;
+    font-family: Banschrift condensed, Arial, Helvetica, sans-serif;
+}
+
+.articles .article .right p.description {
+    color: #2d2d2d;
+}
+
+button {
+    background-color: #D9D9D9 ;
+    /*box-shadow: 1px 2px 2px #ffcc4d ;*/
+    border: 2px solid #ffcc4d ;
+    border-radius: 10px;
+}
+
+button a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+button:hover {
+    background-color: #ffcc4d;
+    box-shadow: 3px 5px 13px #2d2d2d ;
+}
+button:hover a {
+    color: #D9D9D9;
+    text-shadow: 1px 2px 1px black;
+}
+footer {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: #494949;
+}
+
+footer h2 a {
+    font-size: 20px;
+    font-family: Banschrift condensed, Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: #494949;
+}
+
+footer .social-media {
+    display: flex;
+}
+
+footer .social-media p img {
+    width: 50px;
+    margin-right: 20px;
+}
+/*rendre la page responsive*/
+@media screen and (max-width:640px){
+    body {
+        margin: 10px 20px;
+    }
+    /*remonte les onglets au niveau du titre*/
+    nav .onglets {
+        margin-top: -10px;
+       /* display: none; /*élimine les onglets au visuel --> voir burger*/
+    }
+
+    nav img.haut-gauche {
+        display: none;
+        margin-top: -15px;
+        margin-bottom: 25px;
+        margin-right: auto;
+    }
+
+    hr {
+        width: 150px;
+        color: #ffcc4d;
+    }
+    /*menu burger*/
+    /*nav .onglets_burger {
+        display: flex;
+    }*/
+    /*modifie la taille d image de chaque article*/
+    .articles .article .left img {
+        height: 100%;
+        width: 100%;
+    }
+    .articles .article .left iframe {
+        height: 100%;
+        width: 100%;
+    }
+    
+    /*partie droite de l'article avec tt le texte*/
+    .articles .article .right {
+        margin: 0;
+        max-width: 100%;/*annule les 50% plus haut*/
+    }
+    footer .social-media {
+        margin-top: -20px;
+    }
+}
+
